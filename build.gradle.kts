@@ -5,6 +5,7 @@ val logback_version: String by project
 plugins {
     application
     kotlin("jvm") version "1.5.31"
+    kotlin("plugin.serialization") version "1.5.31"
 }
 
 group = "com.techtalk"
@@ -18,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-serialization:$ktor_version")
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
