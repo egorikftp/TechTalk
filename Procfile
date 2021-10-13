@@ -1,0 +1,1 @@
+web: ./build/install/com.techtalk.ktor-sample/bin/com.techtalk.ktor-sample
