@@ -1,11 +1,12 @@
 package com.techtalk
 
+import com.techtalk.plugins.configureRouting
+import com.techtalk.util.port
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import com.techtalk.plugins.*
 
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    embeddedServer(Netty, port = port) {
         configureRouting()
     }.start(wait = true)
 }
