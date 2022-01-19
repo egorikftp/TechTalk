@@ -1,11 +1,24 @@
 package com.egoriku.blurhash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.Scaffold
+import cafe.adriel.voyager.navigator.Navigator
+import com.egoriku.blurhash.screen.Main
+import com.egoriku.blurhash.theme.AppTheme
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        setContent {
+            AppTheme {
+                Scaffold {
+                    Navigator(screen = Main())
+                }
+            }
+        }
     }
 }
