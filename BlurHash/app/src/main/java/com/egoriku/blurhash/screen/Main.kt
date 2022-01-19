@@ -15,7 +15,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.egoriku.blurhash.screen.sample.BlurHashPlaceHolder
 import com.egoriku.blurhash.screen.sample.ColorPlaceHolder
-import com.egoriku.blurhash.screen.sample.EncodeDecode
+import com.egoriku.blurhash.screen.encodedecode.EncodeDecodeScreen
 import com.egoriku.blurhash.screen.sample.NoPlaceHolder
 
 class Main : Screen {
@@ -42,7 +42,7 @@ class Main : Screen {
                     Text(text = "BlurHash placeholder")
                 }
 
-                Button(onClick = { navigator.push(EncodeDecode()) }) {
+                Button(onClick = { navigator.push(EncodeDecodeScreen()) }) {
                     Text(text = "Encode/Decode")
                 }
             }

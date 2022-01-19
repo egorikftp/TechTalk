@@ -18,3 +18,18 @@ fun rememberBlurHash(
         )
     )
 }
+
+@Composable
+fun rememberBlurHash(
+    blurHash: String?,
+    ratio: Double,
+    context: Context = LocalContext.current,
+) = remember(blurHash) {
+    mutableStateOf(
+        BlurhashDecoder.createPlaceholder(
+            context = context,
+            blurHash = blurHash,
+            ratio = ratio
+        )
+    )
+}
