@@ -26,7 +26,7 @@ import com.egoriku.blurhash.ext.HSpacer
 import com.egoriku.blurhash.screen.DataScreenModel
 import com.egoriku.blurhash.screen.DeliveryFeed
 
-class NoPlaceHolder : Screen {
+class NoPlaceholder : Screen {
 
     @Composable
     override fun Content() {

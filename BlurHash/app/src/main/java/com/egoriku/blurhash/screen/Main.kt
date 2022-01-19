@@ -16,7 +16,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.egoriku.blurhash.screen.sample.BlurHashPlaceHolder
 import com.egoriku.blurhash.screen.sample.ColorPlaceHolder
 import com.egoriku.blurhash.screen.encodedecode.EncodeDecodeScreen
-import com.egoriku.blurhash.screen.sample.NoPlaceHolder
+import com.egoriku.blurhash.screen.sample.NoPlaceholder
 
 class Main : Screen {
 
@@ -30,7 +30,7 @@ class Main : Screen {
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
 
-                Button(onClick = { navigator.push(NoPlaceHolder()) }) {
+                Button(onClick = { navigator.push(NoPlaceholder()) }) {
                     Text(text = "No placeholder")
                 }
 
