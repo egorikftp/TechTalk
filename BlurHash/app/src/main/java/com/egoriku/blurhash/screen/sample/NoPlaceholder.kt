@@ -21,10 +21,10 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import coil.compose.rememberImagePainter
-import com.egoriku.blurhash.data.MenuItem
+import com.egoriku.blurhash.data.UnsplashItem
 import com.egoriku.blurhash.ext.HSpacer
 import com.egoriku.blurhash.screen.DataScreenModel
-import com.egoriku.blurhash.screen.DeliveryFeed
+import com.egoriku.blurhash.screen.ImagesFeed
 
 class NoPlaceholder : Screen {
 
@@ -32,10 +32,10 @@ class NoPlaceholder : Screen {
     override fun Content() {
         val screenModel = getScreenModel<DataScreenModel>()
 
-        val items by screenModel.delivery.collectAsState()
+        val items by screenModel.unsplashState.collectAsState()
 
         if (items.isNotEmpty()) {
-            DeliveryFeed {
+            ImagesFeed {
                 items(items) {
                     NoPlaceholderCard(data = it)
                 }
@@ -44,7 +44,7 @@ class NoPlaceholder : Screen {
     }
 
     @Composable
-    private fun NoPlaceholderCard(data: MenuItem) {
+    private fun NoPlaceholderCard(data: UnsplashItem) {
         Card(
             shape = RoundedCornerShape(10.dp),
             elevation = 10.dp,
@@ -62,12 +62,11 @@ class NoPlaceholder : Screen {
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(2.0f)
+                        .aspectRatio(1.8f)
                 )
                 Column(modifier = Modifier.padding(start = 16.dp)) {
                     HSpacer(16.dp)
                     Text(text = data.name, fontWeight = FontWeight.Bold)
-                    Text(text = data.desc)
                     HSpacer(16.dp)
                 }
 
@@ -75,7 +74,7 @@ class NoPlaceholder : Screen {
 
                 Column(modifier = Modifier.padding(start = 16.dp)) {
                     HSpacer(8.dp)
-                    Text(text = "${data.priceRange} • ", color = Color.Gray)
+                    Text(text = data.desc, color = Color.Gray)
                     HSpacer(8.dp)
                 }
             }

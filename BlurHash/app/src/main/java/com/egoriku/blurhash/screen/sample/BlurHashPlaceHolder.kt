@@ -23,10 +23,10 @@ import cafe.adriel.voyager.koin.getScreenModel
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import com.egoriku.blurhash.blurhash.rememberBlurHash
-import com.egoriku.blurhash.data.MenuItem
+import com.egoriku.blurhash.data.UnsplashItem
 import com.egoriku.blurhash.ext.HSpacer
 import com.egoriku.blurhash.screen.DataScreenModel
-import com.egoriku.blurhash.screen.DeliveryFeed
+import com.egoriku.blurhash.screen.ImagesFeed
 
 class BlurHashPlaceHolder : Screen {
 
@@ -34,10 +34,10 @@ class BlurHashPlaceHolder : Screen {
     override fun Content() {
         val screenModel = getScreenModel<DataScreenModel>()
 
-        val items by screenModel.delivery.collectAsState()
+        val items by screenModel.unsplashState.collectAsState()
 
         if (items.isNotEmpty()) {
-            DeliveryFeed {
+            ImagesFeed {
                 items(items) {
                     BlurHashPlaceholderCard(data = it)
                 }
@@ -46,7 +46,7 @@ class BlurHashPlaceHolder : Screen {
     }
 
     @Composable
-    private fun BlurHashPlaceholderCard(data: MenuItem) {
+    private fun BlurHashPlaceholderCard(data: UnsplashItem) {
         val blurPlaceholder by rememberBlurHash(blurHash = data.blurHash)
 
         Card(
@@ -69,12 +69,11 @@ class BlurHashPlaceHolder : Screen {
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(2.0f)
+                        .aspectRatio(1.8f)
                 )
                 Column(modifier = Modifier.padding(start = 16.dp)) {
                     HSpacer(16.dp)
                     Text(text = data.name, fontWeight = FontWeight.Bold)
-                    Text(text = data.desc)
                     HSpacer(16.dp)
                 }
 
@@ -82,7 +81,7 @@ class BlurHashPlaceHolder : Screen {
 
                 Column(modifier = Modifier.padding(start = 16.dp)) {
                     HSpacer(8.dp)
-                    Text(text = "${data.priceRange} • ", color = Color.Gray)
+                    Text(text = data.desc, color = Color.Gray)
                     HSpacer(8.dp)
                 }
             }

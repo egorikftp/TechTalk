@@ -1,10 +1,8 @@
 package com.egoriku.blurhash.data
 
-data class MenuItem(
+data class UnsplashItem(
     val image: String,
     val blurHash: String?,
-    val overlayText: String?,
     val name: String,
-    val desc: String,
-    val priceRange: String
+    val desc: String
 )
