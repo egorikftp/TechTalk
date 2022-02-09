@@ -32,6 +32,7 @@ fun ImagesFeed(content: LazyListScope.() -> Unit) {
         val imageLoader = LocalImageLoader.current
         DisposableEffect(key1 = Unit) {
             onDispose {
+                imageLoader.bitmapPool.clear()
                 imageLoader.memoryCache.clear()
             }
         }
