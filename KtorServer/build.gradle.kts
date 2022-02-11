@@ -4,7 +4,7 @@ val logback_version: String by project
 
 plugins {
     application
-    kotlin("jvm") version "1.5.31"
+    // kotlin("jvm") version "1.5.31"
     kotlin("plugin.serialization") version "1.5.31"
 }
 
@@ -12,10 +12,6 @@ group = "com.techtalk"
 version = "0.0.1"
 application {
     mainClass.set("com.techtalk.ApplicationKt")
-}
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {
@@ -27,6 +23,6 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
 }
 
-tasks.create("stage"){
+tasks.create("stage") {
     dependsOn("installDist")
 }

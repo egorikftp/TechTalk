@@ -3,9 +3,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
 }
 rootProject.name = "TechTalk"
-include ':BlurHash'
+
 include ':ActivityResult'
+include ':BlurHash'
+include ':KtorServer'
