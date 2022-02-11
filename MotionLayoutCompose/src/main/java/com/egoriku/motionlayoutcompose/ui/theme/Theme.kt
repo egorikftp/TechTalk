@@ -2,29 +2,28 @@ package com.egoriku.motionlayoutcompose.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+val DarkColorPalette = lightColors(
+    primary = Color(0xFFEE894F),
+    onPrimary = Color(0xFFF4EFE7),
+    primaryVariant = Color(0xFFEE894F),
+    secondary = Color(0xFF393939),
+    onSecondary = Color(0xFFF4EFE7),
+    error = Color.Red,
+    onError = Color(0xFFF4EFE7)
 )
 
-private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+val LightColorPalette = lightColors(
+    primary = Color(0xFFEE894F),
+    onPrimary = Color(0xFFF4EFE7),
+    primaryVariant = Color(0xFFEE894F),
+    secondary = Color(0xFF393939),
+    onSecondary = Color(0xFFF4EFE7),
+    error = Color.Red,
+    onError = Color(0xFFF4EFE7)
 )
 
 @Composable
@@ -37,8 +36,6 @@ fun TechTalkTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
-        shapes = Shapes,
         content = content
     )
 }
