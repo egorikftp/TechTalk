@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TechTalk"
 include ':BlurHash'
+include ':ActivityResult'
