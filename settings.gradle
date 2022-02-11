@@ -10,3 +10,4 @@ rootProject.name = "TechTalk"
 include ':ActivityResult'
 include ':BlurHash'
 include ':KtorServer'
+include ':MotionLayoutCompose'
