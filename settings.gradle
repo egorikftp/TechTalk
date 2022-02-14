@@ -10,3 +10,6 @@ rootProject.name = "TechTalk"
 include ':ActivityResult'
 include ':BlurHash'
 include ':KtorServer'
+include ':ThemedIconAndroid12'
+include ':ThemedIconAndroid13'
+include ':ThemedIconAndroid13WithAlpha'
