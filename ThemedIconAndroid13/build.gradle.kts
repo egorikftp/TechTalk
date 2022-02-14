@@ -7,7 +7,7 @@ android {
     compileSdk = 31
 
     defaultConfig {
-        applicationId = "com.egoriku.themedicon"
+        applicationId = "com.egoriku.themedicon13"
         minSdk = 21
         targetSdk = 31
         versionCode = 1
